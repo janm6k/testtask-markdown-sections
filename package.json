@@ -1,0 +1,19 @@
+{
+  "name": "testtask-markdown-sections",
+  "version": "1.0.0",
+  "description": "Test task - Markdown Sections",
+  "main": "index.js",
+  "author": "Jan Matousek <jan@m6k.cz>",
+  "license": "MIT",
+  "dependencies": {
+    "coffee-script": "^1.8.0",
+    "markdown": "^0.5.0"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec --compilers 'coffee:coffee-script/register'"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.1.0"
+  }
+}
