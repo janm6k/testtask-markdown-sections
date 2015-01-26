@@ -1,13 +1,45 @@
+Parse two levels of headers from markdown file.
 
-I have used [markdown-js](https://github.com/evilstreak/markdown-js) instead of
-[robotskirt](http://benmills.org/robotskirt/), I did not find easy way to access parsed markdown data with robotskirt.
+It transforms this markdown:
 
-My solution differs from the assignment, because it puts parsed markdown data into both `text` and `name` properties -
-it was easier with my approach than to get the original unparsed string - that is because markdown-js does not easily
-allow to convert parsed markdown data into original markdown notation.
+```
+# Main header
 
-I can redo it with different parser if that is a problem.
+First paragraph
 
+## Subheader
+
+Subheader text
+
+# Second header
+```
+
+into
+
+```
+{
+	sections: [
+		{
+			name: 'Main header',
+			text: ['para', 'First paragraph'], // markdown-js JsonMl
+			subsections: [
+				{
+					name: 'Subheader',
+					text: ['para', 'Subheader text']
+				}
+			]
+		},
+		{
+			name: 'Second header'
+		}
+	]
+}
+```
+
+Content before first header is put into "preamble" section, with `name` set to `null`.
+
+
+## Run tests
 
 To try it out run the tests:
 
