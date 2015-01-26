@@ -2,7 +2,7 @@
   "name": "testtask-markdown-sections",
   "version": "1.0.0",
   "description": "Test task - Markdown Sections",
-  "main": "index.js",
+  "main": "sections.js",
   "author": "Jan Matousek <jan@m6k.cz>",
   "license": "MIT",
   "dependencies": {
